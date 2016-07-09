@@ -62,10 +62,10 @@ function nestedArrayToDotted($data)
             }, []);
             
             return array_merge($acc, $temp2);
-        } else {
-            $acc[$key] = $data[$key];
-            return $acc;
         }
+        
+        $acc[$key] = $data[$key];
+        return $acc;
 
     }, []);
 
