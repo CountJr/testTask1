@@ -3,6 +3,8 @@
 namespace CountJr\testTask;
 
 /**
+ * Task No1. Make nested array from flat one.
+ *
  * @param array $data
  * @return array
  */
@@ -18,6 +20,8 @@ function flatArrayToNested($data)
 }
 
 /**
+ * Task No2. Make nested array from flat with dotted keys.
+ *
  * @param array $data
  * @return array
  */
@@ -42,6 +46,8 @@ function dottedArrayToNested($data)
 }
 
 /**
+ * Task No2 vice versa. Make flat array with dotted keys from nested one.
+ *
  * @param array $data
  * @return array
  */
