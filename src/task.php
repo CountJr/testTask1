@@ -6,6 +6,7 @@ namespace CountJr\testTask;
  * Task No1. Make nested array from flat one.
  *
  * @param array $data
+ * @param array $initValue
  * @return array
  */
 function flatArrayToNested($data, $initValue = [])
