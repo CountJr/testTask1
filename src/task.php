@@ -8,14 +8,14 @@ namespace CountJr\testTask;
  * @param array $data
  * @return array
  */
-function flatArrayToNested($data)
+function flatArrayToNested($data, $initValue = [])
 {
 
     return array_reduce($data, function ($acc, $item) {
 
         return [$item => $acc];
 
-    }, []);
+    }, $initValue);
 
 }
 
@@ -33,11 +33,7 @@ function dottedArrayToNested($data)
         $tempVar = array_reverse(explode('.', $item));
         $lastKey = array_shift($tempVar);
         
-        $subTree = array_reduce($tempVar, function ($acc, $key) {
-            
-            return [$key => $acc];
-            
-        }, [$lastKey => $data[$item]]);
+        $subTree = flatArrayToNested($tempVar, [$lastKey => $data[$item]]);
         
         return array_merge_recursive($acc, $subTree);
 
